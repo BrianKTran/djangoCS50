@@ -1,0 +1,19 @@
+{{% block body %}}
+
+{% if message %}
+
+  <div>
+      {{ message }}
+  </div>
+
+{% endif %}
+
+<form action="{% url 'login' %}" method="post">
+{% csrf_token %}
+  <input name="username" type="text">
+  <input name="password" type="text">
+  <input name="submit" value="Login">
+</form>
+
+
+{% endblock %}
